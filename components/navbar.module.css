@@ -1,0 +1,187 @@
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  z-index: 50;
+}
+
+.container {
+  width: min(1280px, calc(100% - 64px));
+  min-height: 88px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 75px;
+  object-fit: contain;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  flex: 1;
+}
+
+.navLink {
+  position: relative;
+
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+
+  padding: 10px 0;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navLink:hover {
+  color: #f97316;
+}
+
+.navLink::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+
+  height: 2px;
+
+  background: #f97316;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.2s ease;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 0 20px;
+
+  border-radius: 10px;
+
+  background: #f97316;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cta:hover {
+  background: #ea580c;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.22);
+}
+
+.arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+  .container {
+    width: min(100% - 40px, 1280px);
+    min-height: 78px;
+    gap: 20px;
+  }
+
+  .logo {
+    width: 125px;
+    height: 64px;
+  }
+
+  .nav {
+    gap: 22px;
+  }
+
+  .navLink {
+    font-size: 14px;
+  }
+
+  .cta {
+    min-height: 42px;
+    padding: 0 15px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .container {
+    width: calc(100% - 28px);
+    min-height: auto;
+
+    padding: 12px 0;
+
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    margin-right: auto;
+  }
+
+  .logo {
+    width: 115px;
+    height: 58px;
+  }
+
+  .cta {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+
+    justify-content: flex-start;
+
+    gap: 22px;
+
+    overflow-x: auto;
+    padding: 4px 0 2px;
+  }
+
+  .navLink {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
